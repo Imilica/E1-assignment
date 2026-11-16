@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin Login - Sandbox</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<nav id="nav"></nav>
+<main>
+  <h1>Admin Login</h1>
+  <div id="form-error" class="error banner" role="alert" data-testid="login-error" hidden></div>
+  <form id="login-form" novalidate data-endpoint="/api/admin/login">
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" placeholder="Email" autocomplete="username" data-testid="email">
+    <div class="error" id="email-error" data-testid="email-error"></div>
+
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" placeholder="Password" autocomplete="current-password" data-testid="password">
+    <div class="error" id="password-error" data-testid="password-error"></div>
+
+    <label class="toggle" for="remember">
+      <input id="remember" name="remember" type="checkbox" role="switch" data-testid="remember-me">
+      <span class="slider" data-testid="remember-me-slider"></span> Remember me
+    </label>
+
+    <button type="submit" class="primary" data-testid="login-submit">Login as admin</button>
+  </form>
+  <div class="links"><a href="/forgot-password" data-testid="forgot-password-link">Forgot password?</a></div>
+</main>
+<script src="/static/app.js"></script>
+<script src="/static/login.js"></script>
+</body></html>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Test Cases - Sandbox</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<nav id="nav"></nav>
+<main class="wide">
+  <div class="between">
+    <h1>Test Cases</h1>
+    <a href="/test-cases/new" data-testid="new-test-case-link"><button class="primary" style="margin:0" type="button">New Test Case</button></a>
+  </div>
+  <p id="empty" class="muted" data-testid="empty-list" hidden>No test cases yet.</p>
+  <table id="table" data-testid="test-case-table" hidden>
+    <thead><tr><th>Title</th><th>Expected Result</th><th>Steps</th><th>Automated</th><th></th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+</main>
+<script src="/static/app.js"></script>
+<script src="/static/test-cases.js"></script>
+</body></html>

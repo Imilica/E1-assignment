@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard - Sandbox</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<nav id="nav"></nav>
+<main>
+  <h1 data-testid="dashboard-title">Dashboard</h1>
+  <p data-testid="welcome">Loading…</p>
+  <p>Total test cases: <strong id="total" data-testid="total-cases">–</strong>
+     (automated: <strong id="auto" data-testid="automated-cases">–</strong>)</p>
+  <p><a href="/test-cases" data-testid="goto-test-cases">View test cases</a> ·
+     <a href="/test-cases/new" data-testid="goto-new-test-case">New test case</a></p>
+</main>
+<script src="/static/app.js"></script>
+<script src="/static/dashboard.js"></script>
+</body></html>

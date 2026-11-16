@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New Test Case - Sandbox</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<nav id="nav"></nav>
+<main>
+  <div class="row">
+    <a href="/test-cases" class="back" id="back" aria-label="Back" title="Back" data-testid="back-button">&larr;</a>
+    <h1 style="margin:0">New Test Case</h1>
+  </div>
+  <form id="tc-form" novalidate>
+    <label for="title">Title *</label>
+    <input id="title" type="text" placeholder="Title" data-testid="title">
+    <div class="error" id="title-error" data-testid="title-error"></div>
+
+    <label for="description">Description</label>
+    <textarea id="description" placeholder="Description" data-testid="description"></textarea>
+
+    <label for="expected">Expected Result *</label>
+    <input id="expected" type="text" placeholder="Expected Result" data-testid="expected-result">
+    <div class="error" id="expected-error" data-testid="expected-result-error"></div>
+
+    <label>Test Steps *</label>
+    <div id="steps" data-testid="steps"></div>
+    <div class="error" id="steps-error" data-testid="steps-error"></div>
+    <button type="button" class="secondary" id="add-step" data-testid="add-step">Add Test Step</button>
+
+    <label class="toggle" for="automated">
+      <input id="automated" type="checkbox" role="switch" data-testid="automated">
+      <span class="slider" data-testid="automated-slider"></span> Automated
+    </label>
+
+    <button type="submit" class="primary" data-testid="submit">Submit</button>
+  </form>
+</main>
+<script src="/static/app.js"></script>
+<script src="/static/new-test-case.js"></script>
+</body></html>

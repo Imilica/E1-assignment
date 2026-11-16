@@ -1,0 +1,17 @@
+{
+  "name": "sandbox-app",
+  "version": "1.0.0",
+  "description": "Minimal Node.js + SQLite sandbox app for Playwright e2e testing",
+  "main": "server.js",
+  "private": true,
+  "engines": { "node": ">=22.5" },
+  "scripts": {
+    "start": "node server.js",
+    "start:bg": "bash scripts/start.sh",
+    "stop": "bash scripts/stop.sh",
+    "reset-db": "node scripts/reset-db.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

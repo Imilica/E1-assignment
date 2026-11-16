@@ -1,0 +1,31 @@
+{
+  "name": "sandbox-e2e",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright + TypeScript UI tests for the sandbox app",
+  "scripts": {
+    "app:start": "npm --prefix sandbox-app start",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:smoke": "playwright test --grep @smoke",
+    "report": "playwright show-report reports/html",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write ."
+  },
+  "engines": {
+    "node": ">=22.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@faker-js/faker": "^10.6.0",
+    "@playwright/test": "^1.65.0",
+    "@types/node": "^26.6.6",
+    "eslint": "^10.14.0",
+    "eslint-plugin-playwright": "^2.12.2",
+    "prettier": "^3.10.1",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.2"
+  }
+}
