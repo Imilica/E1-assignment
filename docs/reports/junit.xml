@@ -1,0 +1,554 @@
+<testsuites id="" name="" tests="68" failures="0" skipped="0" errors="0" time="5.909555999999999">
+<testsuite name="setup/auth.setup.ts" timestamp="2026-11-16T14:53:54.415Z" hostname="setup" tests="1" failures="0" skipped="0" time="0.496" errors="0">
+<testcase name="authenticate as the standard user through the UI" classname="setup/auth.setup.ts" time="0.496">
+<properties>
+<property name="seed" value="20260101 (test: 2345976049)">
+</property>
+</properties>
+</testcase>
+</testsuite>
+<testsuite name="login/login.spec.ts" timestamp="2026-11-16T14:53:54.415Z" hostname="chromium" tests="19" failures="0" skipped="0" time="7.335" errors="0">
+<testcase name="Login › TC-LOGIN-01: successful login redirects to the dashboard @smoke" classname="login/login.spec.ts" time="0.52">
+<properties>
+<property name="seed" value="20260101 (test: 2767487721)">
+</property>
+<property name="requirement" value="Login: redirect to dashboard on correct credentials">
+</property>
+</properties>
+</testcase>
+<testcase name="Login › TC-LOGIN-02: invalid credentials show an error › unknown user" classname="login/login.spec.ts" time="0.565">
+<properties>
+<property name="seed" value="20260101 (test: 1582214330)">
+</property>
+<property name="requirement" value="Login: show error message when login fails">
+</property>
+</properties>
+</testcase>
+<testcase name="Login › TC-LOGIN-02: invalid credentials show an error › valid email with a wrong password" classname="login/login.spec.ts" time="0.603">
+<properties>
+<property name="seed" value="20260101 (test: 2407790892)">
+</property>
+<property name="requirement" value="Login: show error message when login fails">
+</property>
+</properties>
+</testcase>
+<testcase name="Login › TC-LOGIN-03: empty fields trigger frontend validation and no backend call › both empty" classname="login/login.spec.ts" time="0.455">
+<properties>
+<property name="seed" value="20260101 (test: 4199436779)">
+</property>
+<property name="requirement" value="Login: frontend validation, no backend call on empty fields; password required">
+</property>
+</properties>
+</testcase>
+<testcase name="Login › TC-LOGIN-03: empty fields trigger frontend validation and no backend call › email only" classname="login/login.spec.ts" time="0.529">
+<properties>
+<property name="seed" value="20260101 (test: 685682236)">
+</property>
+<property name="requirement" value="Login: frontend validation, no backend call on empty fields; password required">
+</property>
+</properties>
+</testcase>
+<testcase name="Login › TC-LOGIN-03: empty fields trigger frontend validation and no backend call › password only" classname="login/login.spec.ts" time="0.286">
+<properties>
+<property name="seed" value="20260101 (test: 270100113)">
+</property>
+<property name="requirement" value="Login: frontend validation, no backend call on empty fields; password required">
+</property>
+</properties>
+</testcase>
+<testcase name="Login › TC-LOGIN-04: invalid email formats are rejected › rejects &quot;plainaddress&quot;" classname="login/login.spec.ts" time="0.31">
+<properties>
+<property name="seed" value="20260101 (test: 3477598155)">
+</property>
+<property name="requirement" value="Login: email must be a valid format">
+</property>
+</properties>
+</testcase>
+<testcase name="Login › TC-LOGIN-04: invalid email formats are rejected › rejects &quot;user@&quot;" classname="login/login.spec.ts" time="0.309">
+<properties>
+<property name="seed" value="20260101 (test: 329033728)">
+</property>
+<property name="requirement" value="Login: email must be a valid format">
+</property>
+</properties>
+</testcase>
+<testcase name="Login › TC-LOGIN-04: invalid email formats are rejected › rejects &quot;@domain.com&quot;" classname="login/login.spec.ts" time="0.284">
+<properties>
+<property name="seed" value="20260101 (test: 38423324)">
+</property>
+<property name="requirement" value="Login: email must be a valid format">
+</property>
+</properties>
+</testcase>
+<testcase name="Login › TC-LOGIN-04: invalid email formats are rejected › rejects &quot;user@domain&quot;" classname="login/login.spec.ts" time="0.32">
+<properties>
+<property name="seed" value="20260101 (test: 2857537885)">
+</property>
+<property name="requirement" value="Login: email must be a valid format">
+</property>
+</properties>
+</testcase>
+<testcase name="Login › TC-LOGIN-04: invalid email formats are rejected › rejects &quot;user name@domain.com&quot;" classname="login/login.spec.ts" time="0.298">
+<properties>
+<property name="seed" value="20260101 (test: 4043050836)">
+</property>
+<property name="requirement" value="Login: email must be a valid format">
+</property>
+</properties>
+</testcase>
+<testcase name="Login › TC-LOGIN-05: password is masked and the page is served over HTTPS @smoke" classname="login/login.spec.ts" time="0.268">
+<properties>
+<property name="seed" value="20260101 (test: 3701759459)">
+</property>
+<property name="requirement" value="Login: HTTPS only; masked password">
+</property>
+</properties>
+</testcase>
+<testcase name="Login › TC-LOGIN-06: Remember me › is off by default" classname="login/login.spec.ts" time="0.238">
+<properties>
+<property name="seed" value="20260101 (test: 1347676780)">
+</property>
+<property name="requirement" value="Login: Remember me toggle">
+</property>
+</properties>
+</testcase>
+<testcase name="Login › TC-LOGIN-06: Remember me › ON keeps a persistent session cookie" classname="login/login.spec.ts" time="0.486">
+<properties>
+<property name="seed" value="20260101 (test: 372699029)">
+</property>
+<property name="requirement" value="Login: Remember me keeps the user logged in longer">
+</property>
+</properties>
+</testcase>
+<testcase name="Login › TC-LOGIN-06: Remember me › OFF issues a browser-session cookie" classname="login/login.spec.ts" time="0.43">
+<properties>
+<property name="seed" value="20260101 (test: 3493057614)">
+</property>
+<property name="requirement" value="Login: Remember me keeps the user logged in longer">
+</property>
+</properties>
+</testcase>
+<testcase name="Login › TC-LOGIN-07: navigation links › Forgot Password link opens the forgot password page" classname="login/login.spec.ts" time="0.397">
+<properties>
+<property name="seed" value="20260101 (test: 2761400595)">
+</property>
+<property name="requirement" value="Login: Forgot Password link">
+</property>
+</properties>
+</testcase>
+<testcase name="Login › TC-LOGIN-07: navigation links › Admin link in the top menu opens the admin login page" classname="login/login.spec.ts" time="0.354">
+<properties>
+<property name="seed" value="20260101 (test: 1383795558)">
+</property>
+<property name="requirement" value="Login: Admin link">
+</property>
+</properties>
+</testcase>
+<testcase name="Login › TC-LOGIN-07: navigation links › Login link in the top menu leads to the login page" classname="login/login.spec.ts" time="0.432">
+<properties>
+<property name="seed" value="20260101 (test: 3012639367)">
+</property>
+<property name="requirement" value="Login: Login link">
+</property>
+</properties>
+</testcase>
+<testcase name="Login › TC-LOGIN-08: labels, placeholders and Remember me are visible" classname="login/login.spec.ts" time="0.251">
+<properties>
+<property name="seed" value="20260101 (test: 2247373369)">
+</property>
+<property name="requirement" value="Login: labels/placeholders &quot;Email&quot; and &quot;Password&quot;; Remember me toggle">
+</property>
+</properties>
+</testcase>
+</testsuite>
+<testsuite name="test-case/new-test-case.spec.ts" timestamp="2026-11-16T14:53:54.415Z" hostname="chromium" tests="16" failures="0" skipped="0" time="8.486" errors="0">
+<testcase name="New Test Case › TC-NTC-01: create a test case with all fields and see it in the list @smoke" classname="test-case/new-test-case.spec.ts" time="0.751">
+<properties>
+<property name="seed" value="20260101 (test: 2083849656)">
+</property>
+<property name="requirement" value="New Test Case: create, Submit saves in the list">
+</property>
+</properties>
+</testcase>
+<testcase name="New Test Case › TC-NTC-02: create a test case with required fields only @smoke" classname="test-case/new-test-case.spec.ts" time="0.592">
+<properties>
+<property name="seed" value="20260101 (test: 2443302286)">
+</property>
+<property name="requirement" value="New Test Case: Description is optional">
+</property>
+</properties>
+</testcase>
+<testcase name="New Test Case › TC-NTC-03: required fields empty show errors and nothing is saved › empty Title" classname="test-case/new-test-case.spec.ts" time="0.636">
+<properties>
+<property name="seed" value="20260101 (test: 2659520587)">
+</property>
+<property name="requirement" value="New Test Case: Title, Expected Result and Test Steps are mandatory">
+</property>
+</properties>
+</testcase>
+<testcase name="New Test Case › TC-NTC-03: required fields empty show errors and nothing is saved › empty Expected Result" classname="test-case/new-test-case.spec.ts" time="0.55">
+<properties>
+<property name="seed" value="20260101 (test: 2031426810)">
+</property>
+<property name="requirement" value="New Test Case: Title, Expected Result and Test Steps are mandatory">
+</property>
+</properties>
+</testcase>
+<testcase name="New Test Case › TC-NTC-03: required fields empty show errors and nothing is saved › empty Title and Expected Result" classname="test-case/new-test-case.spec.ts" time="0.653">
+<properties>
+<property name="seed" value="20260101 (test: 3118712467)">
+</property>
+<property name="requirement" value="New Test Case: Title, Expected Result and Test Steps are mandatory">
+</property>
+</properties>
+</testcase>
+<testcase name="New Test Case › TC-NTC-03: required fields empty show errors and nothing is saved › all required fields empty" classname="test-case/new-test-case.spec.ts" time="0.375">
+<properties>
+<property name="seed" value="20260101 (test: 4044654760)">
+</property>
+<property name="requirement" value="New Test Case: Title, Expected Result and Test Steps are mandatory">
+</property>
+</properties>
+</testcase>
+<testcase name="New Test Case › TC-NTC-04: at least one test step is required" classname="test-case/new-test-case.spec.ts" time="0.409">
+<properties>
+<property name="seed" value="20260101 (test: 1402114022)">
+</property>
+<property name="requirement" value="New Test Case: Test Steps required (at least one)">
+</property>
+</properties>
+</testcase>
+<testcase name="New Test Case › TC-NTC-05: multiple steps keep their order @smoke" classname="test-case/new-test-case.spec.ts" time="0.655">
+<properties>
+<property name="seed" value="20260101 (test: 3172235499)">
+</property>
+<property name="requirement" value="New Test Case: Add Test Step; steps are ordered and preserved">
+</property>
+</properties>
+</testcase>
+<testcase name="New Test Case › TC-NTC-06: Automated toggle › is off by default and saves as not automated" classname="test-case/new-test-case.spec.ts" time="0.629">
+<properties>
+<property name="seed" value="20260101 (test: 3076283731)">
+</property>
+<property name="requirement" value="New Test Case: Automated toggle (default off)">
+</property>
+</properties>
+</testcase>
+<testcase name="New Test Case › TC-NTC-06: Automated toggle › saves as automated when turned on" classname="test-case/new-test-case.spec.ts" time="0.599">
+<properties>
+<property name="seed" value="20260101 (test: 1489586916)">
+</property>
+<property name="requirement" value="New Test Case: Automated toggle">
+</property>
+</properties>
+</testcase>
+<testcase name="New Test Case › TC-NTC-07: Enter key › does not submit an invalid form from the Title field" classname="test-case/new-test-case.spec.ts" time="0.366">
+<properties>
+<property name="seed" value="20260101 (test: 2960769687)">
+</property>
+<property name="requirement" value="New Test Case: Enter must not accidentally submit an invalid form">
+</property>
+</properties>
+</testcase>
+<testcase name="New Test Case › TC-NTC-07: Enter key › does not submit an invalid form from a step field" classname="test-case/new-test-case.spec.ts" time="0.36">
+<properties>
+<property name="seed" value="20260101 (test: 1869447641)">
+</property>
+<property name="requirement" value="New Test Case: Enter must not accidentally submit an invalid form">
+</property>
+</properties>
+</testcase>
+<testcase name="New Test Case › TC-NTC-07: Enter key › submits a fully valid form (observed behaviour)" classname="test-case/new-test-case.spec.ts" time="0.481">
+<properties>
+<property name="seed" value="20260101 (test: 3558746719)">
+</property>
+<property name="requirement" value="New Test Case: Enter submits only when the form is valid">
+</property>
+</properties>
+</testcase>
+<testcase name="New Test Case › TC-NTC-08: back arrow returns to the list without saving" classname="test-case/new-test-case.spec.ts" time="0.313">
+<properties>
+<property name="seed" value="20260101 (test: 607157594)">
+</property>
+<property name="requirement" value="New Test Case: Back arrow returns to the Test Case List">
+</property>
+</properties>
+</testcase>
+<testcase name="New Test Case › TC-NTC-09: placeholders are correct" classname="test-case/new-test-case.spec.ts" time="0.242">
+<properties>
+<property name="seed" value="20260101 (test: 1936488401)">
+</property>
+<property name="requirement" value="New Test Case: placeholders &quot;Title&quot;, &quot;Description&quot;, &quot;Expected Result&quot;, &quot;Test step&quot;">
+</property>
+</properties>
+</testcase>
+<testcase name="New Test Case › TC-NTC-10: all created test cases are listed @smoke" classname="test-case/new-test-case.spec.ts" time="0.875">
+<properties>
+<property name="seed" value="20260101 (test: 2686119575)">
+</property>
+<property name="requirement" value="New Test Case: all test cases are listed">
+</property>
+</properties>
+</testcase>
+</testsuite>
+<testsuite name="api/auth.api.spec.ts" timestamp="2026-11-16T14:53:54.415Z" hostname="api" tests="18" failures="0" skipped="0" time="1.32" errors="0">
+<testcase name="API: auth › API-AUTH-01: valid credentials return 200, a redirect and a secure session cookie" classname="api/auth.api.spec.ts" time="0.118">
+<properties>
+<property name="seed" value="20260101 (test: 3848385271)">
+</property>
+<property name="requirement" value="Login: redirect to dashboard on correct credentials">
+</property>
+</properties>
+</testcase>
+<testcase name="API: auth › API-AUTH-02: Remember me ON gives a persistent cookie, OFF a session cookie" classname="api/auth.api.spec.ts" time="0.157">
+<properties>
+<property name="seed" value="20260101 (test: 2275115917)">
+</property>
+<property name="requirement" value="Login: Remember me toggle">
+</property>
+</properties>
+</testcase>
+<testcase name="API: auth › API-AUTH-03: invalid credentials are refused with 401 › unknown user" classname="api/auth.api.spec.ts" time="0.181">
+<properties>
+<property name="seed" value="20260101 (test: 3040491573)">
+</property>
+<property name="requirement" value="Login: show error message when login fails">
+</property>
+</properties>
+</testcase>
+<testcase name="API: auth › API-AUTH-03: invalid credentials are refused with 401 › valid email with a wrong password" classname="api/auth.api.spec.ts" time="0.176">
+<properties>
+<property name="seed" value="20260101 (test: 2345461880)">
+</property>
+<property name="requirement" value="Login: show error message when login fails">
+</property>
+</properties>
+</testcase>
+<testcase name="API: auth › API-AUTH-04: invalid login payloads are rejected with 400 › email &quot;plainaddress&quot;" classname="api/auth.api.spec.ts" time="0.058">
+<properties>
+<property name="seed" value="20260101 (test: 184756053)">
+</property>
+<property name="requirement" value="Login: email must be a valid format">
+</property>
+</properties>
+</testcase>
+<testcase name="API: auth › API-AUTH-04: invalid login payloads are rejected with 400 › email &quot;user@&quot;" classname="api/auth.api.spec.ts" time="0.029">
+<properties>
+<property name="seed" value="20260101 (test: 1423362835)">
+</property>
+<property name="requirement" value="Login: email must be a valid format">
+</property>
+</properties>
+</testcase>
+<testcase name="API: auth › API-AUTH-04: invalid login payloads are rejected with 400 › email &quot;@domain.com&quot;" classname="api/auth.api.spec.ts" time="0.008">
+<properties>
+<property name="seed" value="20260101 (test: 85789685)">
+</property>
+<property name="requirement" value="Login: email must be a valid format">
+</property>
+</properties>
+</testcase>
+<testcase name="API: auth › API-AUTH-04: invalid login payloads are rejected with 400 › email &quot;user@domain&quot;" classname="api/auth.api.spec.ts" time="0.007">
+<properties>
+<property name="seed" value="20260101 (test: 2500925858)">
+</property>
+<property name="requirement" value="Login: email must be a valid format">
+</property>
+</properties>
+</testcase>
+<testcase name="API: auth › API-AUTH-04: invalid login payloads are rejected with 400 › email &quot;user name@domain.com&quot;" classname="api/auth.api.spec.ts" time="0.007">
+<properties>
+<property name="seed" value="20260101 (test: 3608559468)">
+</property>
+<property name="requirement" value="Login: email must be a valid format">
+</property>
+</properties>
+</testcase>
+<testcase name="API: auth › API-AUTH-04: invalid login payloads are rejected with 400 › missing email" classname="api/auth.api.spec.ts" time="0.008">
+<properties>
+<property name="seed" value="20260101 (test: 4193118191)">
+</property>
+<property name="requirement" value="Login: email must be a valid format">
+</property>
+</properties>
+</testcase>
+<testcase name="API: auth › API-AUTH-04: invalid login payloads are rejected with 400 › empty password" classname="api/auth.api.spec.ts" time="0.011">
+<properties>
+<property name="seed" value="20260101 (test: 3965482605)">
+</property>
+<property name="requirement" value="Login: password required">
+</property>
+</properties>
+</testcase>
+<testcase name="API: auth › API-AUTH-05: admin login › accepts an admin account" classname="api/auth.api.spec.ts" time="0.076">
+<properties>
+<property name="seed" value="20260101 (test: 3439729341)">
+</property>
+<property name="requirement" value="Login: Admin link leads to admin login">
+</property>
+</properties>
+</testcase>
+<testcase name="API: auth › API-AUTH-05: admin login › refuses a normal user" classname="api/auth.api.spec.ts" time="0.039">
+<properties>
+<property name="seed" value="20260101 (test: 2402110817)">
+</property>
+<property name="requirement" value="Login: Admin link leads to admin login">
+</property>
+</properties>
+</testcase>
+<testcase name="API: auth › API-AUTH-06: current user › returns 401 when logged out" classname="api/auth.api.spec.ts" time="0.074">
+<properties>
+<property name="seed" value="20260101 (test: 2880334273)">
+</property>
+<property name="requirement" value="Login: protected data requires authentication">
+</property>
+</properties>
+</testcase>
+<testcase name="API: auth › API-AUTH-06: current user › returns email and role when logged in" classname="api/auth.api.spec.ts" time="0.134">
+<properties>
+<property name="seed" value="20260101 (test: 268970463)">
+</property>
+<property name="requirement" value="Login: protected data requires authentication">
+</property>
+</properties>
+</testcase>
+<testcase name="API: auth › API-AUTH-07: logout invalidates the session" classname="api/auth.api.spec.ts" time="0.106">
+<properties>
+<property name="seed" value="20260101 (test: 1670996458)">
+</property>
+<property name="requirement" value="Login: session ends on logout">
+</property>
+</properties>
+</testcase>
+<testcase name="API: auth › API-AUTH-08: forgot password › answers identically for a known and an unknown email" classname="api/auth.api.spec.ts" time="0.068">
+<properties>
+<property name="seed" value="20260101 (test: 556025880)">
+</property>
+<property name="requirement" value="Login: Forgot Password">
+</property>
+</properties>
+</testcase>
+<testcase name="API: auth › API-AUTH-08: forgot password › rejects an invalid email" classname="api/auth.api.spec.ts" time="0.063">
+<properties>
+<property name="seed" value="20260101 (test: 42416934)">
+</property>
+<property name="requirement" value="Login: email must be a valid format">
+</property>
+</properties>
+</testcase>
+</testsuite>
+<testsuite name="api/test-cases.api.spec.ts" timestamp="2026-11-16T14:53:54.415Z" hostname="api" tests="14" failures="0" skipped="0" time="1.804" errors="0">
+<testcase name="API: test cases › API-TC-01: all endpoints return 401 when logged out" classname="api/test-cases.api.spec.ts" time="0.146">
+<properties>
+<property name="seed" value="20260101 (test: 1435847093)">
+</property>
+<property name="requirement" value="New Test Case: only logged-in users can use test cases">
+</property>
+</properties>
+</testcase>
+<testcase name="API: test cases › API-TC-02: a valid test case is created and listed" classname="api/test-cases.api.spec.ts" time="0.145">
+<properties>
+<property name="seed" value="20260101 (test: 2614551610)">
+</property>
+<property name="requirement" value="New Test Case: Submit saves in the list; steps ordered and preserved">
+</property>
+</properties>
+</testcase>
+<testcase name="API: test cases › API-TC-03: invalid payloads are rejected with 400 and not saved › missing title" classname="api/test-cases.api.spec.ts" time="0.149">
+<properties>
+<property name="seed" value="20260101 (test: 2925351950)">
+</property>
+<property name="requirement" value="New Test Case: Title, Expected Result and Test Steps are mandatory">
+</property>
+</properties>
+</testcase>
+<testcase name="API: test cases › API-TC-03: invalid payloads are rejected with 400 and not saved › blank title" classname="api/test-cases.api.spec.ts" time="0.152">
+<properties>
+<property name="seed" value="20260101 (test: 3804572200)">
+</property>
+<property name="requirement" value="New Test Case: Title, Expected Result and Test Steps are mandatory">
+</property>
+</properties>
+</testcase>
+<testcase name="API: test cases › API-TC-03: invalid payloads are rejected with 400 and not saved › missing expected result" classname="api/test-cases.api.spec.ts" time="0.142">
+<properties>
+<property name="seed" value="20260101 (test: 3914099165)">
+</property>
+<property name="requirement" value="New Test Case: Title, Expected Result and Test Steps are mandatory">
+</property>
+</properties>
+</testcase>
+<testcase name="API: test cases › API-TC-03: invalid payloads are rejected with 400 and not saved › blank expected result" classname="api/test-cases.api.spec.ts" time="0.145">
+<properties>
+<property name="seed" value="20260101 (test: 4002487328)">
+</property>
+<property name="requirement" value="New Test Case: Title, Expected Result and Test Steps are mandatory">
+</property>
+</properties>
+</testcase>
+<testcase name="API: test cases › API-TC-03: invalid payloads are rejected with 400 and not saved › missing steps" classname="api/test-cases.api.spec.ts" time="0.136">
+<properties>
+<property name="seed" value="20260101 (test: 1127868475)">
+</property>
+<property name="requirement" value="New Test Case: Title, Expected Result and Test Steps are mandatory">
+</property>
+</properties>
+</testcase>
+<testcase name="API: test cases › API-TC-03: invalid payloads are rejected with 400 and not saved › empty steps list" classname="api/test-cases.api.spec.ts" time="0.13">
+<properties>
+<property name="seed" value="20260101 (test: 2025070651)">
+</property>
+<property name="requirement" value="New Test Case: Title, Expected Result and Test Steps are mandatory">
+</property>
+</properties>
+</testcase>
+<testcase name="API: test cases › API-TC-03: invalid payloads are rejected with 400 and not saved › only blank steps" classname="api/test-cases.api.spec.ts" time="0.071">
+<properties>
+<property name="seed" value="20260101 (test: 3276397461)">
+</property>
+<property name="requirement" value="New Test Case: Title, Expected Result and Test Steps are mandatory">
+</property>
+</properties>
+</testcase>
+<testcase name="API: test cases › API-TC-03: invalid payloads are rejected with 400 and not saved › steps is not a list" classname="api/test-cases.api.spec.ts" time="0.136">
+<properties>
+<property name="seed" value="20260101 (test: 2133269657)">
+</property>
+<property name="requirement" value="New Test Case: Title, Expected Result and Test Steps are mandatory">
+</property>
+</properties>
+</testcase>
+<testcase name="API: test cases › API-TC-03: invalid payloads are rejected with 400 and not saved › everything missing" classname="api/test-cases.api.spec.ts" time="0.136">
+<properties>
+<property name="seed" value="20260101 (test: 1415128069)">
+</property>
+<property name="requirement" value="New Test Case: Title, Expected Result and Test Steps are mandatory">
+</property>
+</properties>
+</testcase>
+<testcase name="API: test cases › API-TC-04: optional fields default and blank steps are dropped" classname="api/test-cases.api.spec.ts" time="0.136">
+<properties>
+<property name="seed" value="20260101 (test: 3949251938)">
+</property>
+<property name="requirement" value="New Test Case: Description optional; Automated defaults to off">
+</property>
+</properties>
+</testcase>
+<testcase name="API: test cases › API-TC-05: delete › removes the test case from the list" classname="api/test-cases.api.spec.ts" time="0.141">
+<properties>
+<property name="seed" value="20260101 (test: 2050491705)">
+</property>
+<property name="requirement" value="New Test Case: list reflects saved test cases">
+</property>
+</properties>
+</testcase>
+<testcase name="API: test cases › API-TC-05: delete › deleting an unknown id still returns 200 (observed behaviour)" classname="api/test-cases.api.spec.ts" time="0.039">
+<properties>
+<property name="seed" value="20260101 (test: 3613167552)">
+</property>
+<property name="requirement" value="New Test Case: list reflects saved test cases">
+</property>
+</properties>
+</testcase>
+</testsuite>
+</testsuites>

@@ -11,7 +11,11 @@ export default defineConfig({
   workers: env.isCi ? 2 : undefined,
   timeout: 30_000,
   expect: { timeout: 5_000 },
-  reporter: [['list'], ['html', { outputFolder: 'reports/html', open: 'never' }]],
+  reporter: [
+    ['list'],
+    ['html', { outputFolder: 'reports/html', open: 'never' }],
+    ['junit', { outputFile: 'reports/junit.xml' }],
+  ],
   use: {
     baseURL: env.baseUrl,
     testIdAttribute: 'data-testid',

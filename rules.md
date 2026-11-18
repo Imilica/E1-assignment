@@ -160,15 +160,15 @@ export class LoginPage {
 
 ## 7. Reporting
 
-- Format: **Playwright HTML reporter** (plus `list` reporter for terminal output).
+- Format: **Playwright HTML reporter** (plus `list` reporter for terminal output) and a **JUnit XML** file at `reports/junit.xml` for machine-readable results.
   ```ts
-  reporter: [['list'], ['html', { outputFolder: 'reports/html', open: 'never' }]]
+  reporter: [['list'], ['html', { outputFolder: 'reports/html', open: 'never' }], ['junit', { outputFile: 'reports/junit.xml' }]]
   ```
 - Location: `reports/html/` (report) and `reports/test-results/` (traces, screenshots, videos). The `reports/` folder is git-ignored.
 - Publishing: **local only**. No CI publishing is configured. View with `npx playwright show-report reports/html`.
 - Attach the faker seed to each report (`test.info().annotations.push({ type: 'seed', description: String(seed) })`).
 - Annotate tests with the requirement they cover: `test.info().annotations.push({ type: 'requirement', description: 'Login: Remember me' })`.
-- If CI publishing, JUnit or Allure is needed later, update this section first.
+- Results are published locally by copying the HTML report and `junit.xml` into `docs/reports/` and summarising them in `docs/test-report.md`. If CI publishing or Allure is needed later, update this section first.
 
 ## 8. Commands (expected once the project is scaffolded)
 
@@ -190,5 +190,5 @@ npm run lint && npm run typecheck
 - Keep specs declarative: arrange (factory + fixtures), act (page object), assert (expect). No logic (loops/conditionals) in specs beyond data-driven `for` loops generating tests.
 - Data-driven negative tests (invalid emails, empty fields) use a typed table + loop with unique titles.
 - Security items from the PDF (masked password, HTTPS) are asserted explicitly: `await expect(login.passwordInput).toHaveAttribute('type', 'password')`.
-- Commits must not include `reports/`, `.auth/`, `.env`, `test-results/`.
+- Commits must not include the root `reports/` (generated), `.auth/`, `.env`, `test-results/`. `docs/reports/` holds the published results and is committed.
 - When a requirement is ambiguous or a test id is missing and the app is not editable, **ask the user** instead of guessing.

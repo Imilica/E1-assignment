@@ -1,0 +1,91 @@
+
+Running 2 tests using 1 worker
+
+  ✓  1 [setup] › tests/setup/auth.setup.ts:5:1 › authenticate as the standard user through the UI (346ms)
+  ✘  2 [chromium] › tests/zz-demo-failure.spec.ts:6:1 › DEMO: login error text is wrong on purpose (5.6s)
+  ✘  3 [chromium] › tests/zz-demo-failure.spec.ts:6:1 › DEMO: login error text is wrong on purpose (retry #1) (5.6s)
+
+
+  1) [chromium] › tests/zz-demo-failure.spec.ts:6:1 › DEMO: login error text is wrong on purpose ───
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  getByTestId('login-error')
+    Expected: "This text is deliberately wrong"
+    Received: "Invalid email or password."
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveText" getByTestId('login-error') with timeout 5000ms
+      - waiting for getByTestId('login-error')
+        - locator resolved to <div hidden="" role="alert" id="form-error" class="error banner" data-testid="login-error"></div>
+        - unexpected value ""
+        13 × locator resolved to <div role="alert" id="form-error" class="error banner" data-testid="login-error">Invalid email or password.</div>
+           - unexpected value "Invalid email or password."
+
+
+       7 |   await loginPage.goto();
+       8 |   await loginPage.login('nobody@example.com', 'Wrong-Pass1!');
+    >  9 |   await expect(loginPage.errorMessage).toHaveText('This text is deliberately wrong');
+         |                                        ^
+      10 | });
+      11 |
+        at /Users/milicailic/Desktop/E1-assignment/tests/zz-demo-failure.spec.ts:9:40
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../../..artifacts/zz-demo-failure-DEMO-login-error-text-is-wrong-on-purpose-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../../..artifacts/zz-demo-failure-DEMO-login-error-text-is-wrong-on-purpose-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../../..artifacts/zz-demo-failure-DEMO-login-error-text-is-wrong-on-purpose-chromium/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  getByTestId('login-error')
+    Expected: "This text is deliberately wrong"
+    Received: "Invalid email or password."
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveText" getByTestId('login-error') with timeout 5000ms
+      - waiting for getByTestId('login-error')
+        - locator resolved to <div hidden="" role="alert" id="form-error" class="error banner" data-testid="login-error"></div>
+        - unexpected value ""
+        13 × locator resolved to <div role="alert" id="form-error" class="error banner" data-testid="login-error">Invalid email or password.</div>
+           - unexpected value "Invalid email or password."
+
+
+       7 |   await loginPage.goto();
+       8 |   await loginPage.login('nobody@example.com', 'Wrong-Pass1!');
+    >  9 |   await expect(loginPage.errorMessage).toHaveText('This text is deliberately wrong');
+         |                                        ^
+      10 | });
+      11 |
+        at /Users/milicailic/Desktop/E1-assignment/tests/zz-demo-failure.spec.ts:9:40
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../../..artifacts/zz-demo-failure-DEMO-login-error-text-is-wrong-on-purpose-chromium-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../../..artifacts/zz-demo-failure-DEMO-login-error-text-is-wrong-on-purpose-chromium-retry1/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../../..artifacts/zz-demo-failure-DEMO-login-error-text-is-wrong-on-purpose-chromium-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../../..artifacts/zz-demo-failure-DEMO-login-error-text-is-wrong-on-purpose-chromium-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../../..artifacts/zz-demo-failure-DEMO-login-error-text-is-wrong-on-purpose-chromium-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/zz-demo-failure.spec.ts:6:1 › DEMO: login error text is wrong on purpose ────
+  1 passed (13.0s)
