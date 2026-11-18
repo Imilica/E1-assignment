@@ -1,6 +1,6 @@
 # Test Plan
 
-Source: [requirements/Sandbox_Requirements.pdf](requirements/Sandbox_Requirements.pdf). Conventions: [rules.md](rules.md) (Playwright + TypeScript, POM, `getByTestId`, seeded faker factories, Chromium, UI only).
+Source: [requirements/Sandbox_Requirements.pdf](../requirements/Sandbox_Requirements.pdf). Conventions: [rules.md](../rules.md) (Playwright + TypeScript, POM, `getByTestId`, seeded faker factories, Chromium, UI only).
 
 ## 1. Scope
 

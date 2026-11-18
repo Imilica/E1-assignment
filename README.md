@@ -1,6 +1,6 @@
 # Sandbox E2E tests
 
-Playwright + TypeScript tests for the app in [sandbox-app/](sandbox-app/). Conventions: [rules.md](rules.md). Plan and traceability: [test-plan.md](test-plan.md).
+Playwright + TypeScript tests for the app in [sandbox-app/](sandbox-app/). Conventions: [rules.md](rules.md). Plan and traceability: [test-plan.md](docs/test-plan.md).
 
 UI tests (`tests/login`, `tests/test-case`, Chromium) and API tests (`tests/api`, no browser).
 
