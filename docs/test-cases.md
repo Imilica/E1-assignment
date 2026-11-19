@@ -1,9 +1,9 @@
 # Test Cases
 
-Derived from [test-plan.md](test-plan.md). Source requirements: [../requirements/Sandbox_Requirements.pdf](../requirements/Sandbox_Requirements.pdf). Conventions: [../rules.md](../rules.md).
+Derived from [test-plan.md](test-plan.md). Source requirements: [../requirements/Sandbox_Requirements.pdf](../requirements/Sandbox_Requirements.pdf). Conventions: [rules.md](rules.md).
 
 Priority: P1 = must pass for release, P2 = important, P3 = nice to have.
-Status: **Automated** = implemented and passing; **Pending** = blocked, not implemented.
+Status: **Automated** = implemented and passing.
 
 Common preconditions
 - App running at `https://localhost:3443` (self-signed certificate), seeded database.
@@ -22,7 +22,6 @@ Common preconditions
 | TC-LOGIN-06 | Login | Remember me keeps the session persistent | Positive | P2 | Automated | tests/login/login.spec.ts |
 | TC-LOGIN-07 | Login | Navigation links | Navigation | P2 | Automated | tests/login/login.spec.ts |
 | TC-LOGIN-08 | Login | Labels, placeholders and toggle visibility | Usability | P3 | Automated | tests/login/login.spec.ts |
-| TC-LOGIN-09 | Login | Repeated failed attempts (lock behaviour) | Negative | P2 | Pending | not in the PDF |
 | TC-NTC-01 | New Test Case | Create with all fields and see it in the list | Positive | P1 | Automated | tests/test-case/new-test-case.spec.ts |
 | TC-NTC-02 | New Test Case | Create with required fields only | Positive | P1 | Automated | tests/test-case/new-test-case.spec.ts |
 | TC-NTC-03 | New Test Case | Required fields empty | Negative | P1 | Automated | tests/test-case/new-test-case.spec.ts |
@@ -95,11 +94,6 @@ Common preconditions
 ### TC-LOGIN-08: Labels, placeholders and toggle visibility
 - Priority: P3. Requirement: labels and placeholders "Email" and "Password"; Remember me toggle.
 - Expected: email and password inputs have placeholders "Email" and "Password" and accessible names (labels) "Email" and "Password"; the Remember me toggle is visible and enabled.
-
-### TC-LOGIN-09: Repeated failed attempts (lock behaviour) — Pending
-- Priority: P2. Not specified in the PDF, so not implemented.
-- Draft: submit wrong credentials N times; expect a lock/throttle message and a valid login to be refused.
-- Needs from the product owner: the number of attempts and the message.
 
 ## New Test Case
 
@@ -201,7 +195,7 @@ Not covered: `POST /api/test/reset` (wipes the shared database, unsafe with para
 | PDF requirement | Test cases |
 |---|---|
 | Login with email/password, redirect | TC-LOGIN-01, API-AUTH-01 |
-| Error message on failure | TC-LOGIN-02, API-AUTH-03 (TC-LOGIN-09 pending) |
+| Error message on failure | TC-LOGIN-02, API-AUTH-03 |
 | Remember me | TC-LOGIN-06, TC-LOGIN-08, API-AUTH-02 |
 | Forgot Password / Admin / Login links | TC-LOGIN-07, API-AUTH-05, API-AUTH-08 |
 | No backend call on empty fields | TC-LOGIN-03, TC-LOGIN-04 |

@@ -8,7 +8,7 @@ Minimal Node.js + SQLite web app that is the target of the Playwright e2e tests 
 
 ## Test-writing rules
 
-Tests, page objects, fixtures and test data live in the parent project, not here, and MUST follow [../rules.md](../rules.md). Do not add Playwright code under `sandbox-app/`.
+Tests, page objects, fixtures and test data live in the parent project, not here, and MUST follow [../docs/rules.md](../docs/rules.md). Do not add Playwright code under `sandbox-app/`.
 
 ## Commands
 

@@ -17,7 +17,7 @@ Run date: 2026-11-16 · Commit: `2e1e786` plus uncommitted changes (reporter con
 | chromium | UI tests (login, new test case) | 35 | 35 | 0 |
 | api | API tests (auth, test cases) | 32 | 32 | 0 |
 
-Plan coverage: TC-LOGIN-01 to 08 and TC-NTC-01 to 10 are executed (see [test-cases.md](test-cases.md)). **TC-LOGIN-09 (account lockout) is not implemented** because the rule is not in the requirements PDF, so it is not part of these numbers. API cases are not in the PDF; they were added on request.
+Plan coverage: TC-LOGIN-01 to 08 and TC-NTC-01 to 10 are executed (see [test-cases.md](test-cases.md)). API cases are not in the PDF; they were added on request.
 
 ## 2. Published results
 

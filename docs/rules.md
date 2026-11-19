@@ -1,6 +1,6 @@
 # Test Automation Rules (Playwright + TypeScript)
 
-Source requirements: [requirements/Sandbox_Requirements.pdf](requirements/Sandbox_Requirements.pdf).
+Source requirements: [requirements/Sandbox_Requirements.pdf](../requirements/Sandbox_Requirements.pdf).
 These rules apply to every test, page object, fixture and utility written in this repo.
 References: <https://playwright.dev/docs/best-practices>, <https://playwright.dev/docs/pom>, <https://playwright.dev/docs/locators#locate-by-test-id>.
 
@@ -61,7 +61,8 @@ References: <https://playwright.dev/docs/best-practices>, <https://playwright.de
 ```
 .
 ├── CLAUDE.md
-├── rules.md
+├── README.md
+├── docs/             # rules.md, test-plan.md, test-cases.md, test-report.md, run-guide.md, reports/
 ├── requirements/
 ├── playwright.config.ts
 ├── tsconfig.json
@@ -77,7 +78,7 @@ References: <https://playwright.dev/docs/best-practices>, <https://playwright.de
 │   ├── login/            # *.spec.ts per feature
 │   ├── test-case/
 │   └── api/              # API specs (api project)
-└── reports/              # generated, git-ignored
+└── reports/              # generated, git-ignored (published copy: docs/reports/)
 ```
 - One spec file per feature area. Specs import `test`/`expect` from `src/fixtures`, never from `@playwright/test` directly.
 - Use path aliases (`@pages/*`, `@fixtures/*`, `@data/*`, `@utils/*`) defined in `tsconfig.json`.

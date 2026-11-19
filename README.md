@@ -1,37 +1,77 @@
 # Sandbox E2E tests
 
-Playwright + TypeScript tests for the app in [sandbox-app/](sandbox-app/). Conventions: [rules.md](rules.md). Plan and traceability: [test-plan.md](docs/test-plan.md).
+Playwright + TypeScript UI and API tests for the sandbox app in [sandbox-app/](sandbox-app/) (Login and New Test Case features).
 
-UI tests (`tests/login`, `tests/test-case`, Chromium) and API tests (`tests/api`, no browser).
+- **UI tests:** `tests/login`, `tests/test-case` (Chromium, Page Object Model, `getByTestId` locators).
+- **API tests:** `tests/api` (Playwright `request`, no browser).
+- **Reports:** Playwright HTML and JUnit XML, with screenshots and videos for failed UI tests.
+
+## Prerequisites
+
+- Node.js **22.5 or newer** (the app uses the built-in `node:sqlite`)
+- `openssl` on the PATH (the app generates a self-signed HTTPS certificate on first start)
 
 ## Install
+
 ```bash
 npm install
 npx playwright install chromium
 (cd sandbox-app && npm install)
-cp .env.example .env        # BASE_URL, USER_EMAIL, USER_PASSWORD, optional FAKER_SEED
+cp .env.example .env
 ```
-Requires Node >= 22.5 and `openssl` (for the app's self-signed certificate).
 
-## Run
-The app starts automatically (`webServer` in `playwright.config.ts`) or reuses one already running on https://localhost:3443 (`npm run app:start`).
+`.env` holds `BASE_URL` (must be `https://`), the seed user and admin credentials, and an optional `FAKER_SEED`. The defaults in `.env.example` match the app's seed accounts, so no edits are needed to run against a local app.
+
+## Run the tests
+
+You do not have to start the app yourself: Playwright starts it (`https://localhost:3443`) and stops it afterwards. If it is already running, Playwright reuses it.
+
+```bash
+npm test
+```
 
 | Goal | Command |
 |---|---|
-| All tests | `npm test` |
+| All tests (setup + UI + API) | `npm test` |
 | Smoke set (`@smoke`) | `npm run test:smoke` |
-| UI tests only / API tests only | `npx playwright test --project=chromium` / `--project=api` |
-| One folder / file | `npx playwright test tests/login` |
+| UI tests only | `npx playwright test --project=chromium` |
+| API tests only | `npx playwright test --project=api` |
+| One folder or file | `npx playwright test tests/login` |
 | One test by title | `npx playwright test -g "Remember me"` |
-| UI mode / debug | `npm run test:ui` / `npm run test:debug` |
+| Interactive UI mode | `npm run test:ui` |
+| Debugger | `npm run test:debug` |
 | Reproduce a data set | `FAKER_SEED=12345 npm test` |
-| Lint + typecheck | `npm run lint && npm run typecheck` |
+| Lint and typecheck | `npm run lint && npm run typecheck` |
+| Start the app by itself | `npm run app:start` (Ctrl+C to stop) |
 
-## Report
-`reports/html/` (HTML report) and `reports/test-results/` (screenshots and videos for failed UI tests; trace on first retry). Open with `npm run report`. Each test shows its `requirement` and `seed` annotations. Reports are local only and git-ignored.
+## View the report
 
-## Notes
-- A `setup` project logs in through the UI once and stores the session in `.auth/user.json`; login specs start logged out.
-- Tests clean up the test cases they create through the UI. If a run is killed mid-way, leftovers can be removed with `npm --prefix sandbox-app run reset-db` (stop the app first).
-- API tests were added on request (not in the PDF); they cover the plan's "API test cases" table. `POST /api/test/reset` is deliberately not used because tests run in parallel against one DB.
-- TC-LOGIN-09 (account lockout) is not implemented: the rule is not in the requirements PDF.
+```bash
+npm run report        # opens reports/html in the browser
+```
+
+| Output | Location |
+|---|---|
+| HTML report | `reports/html/` |
+| JUnit XML | `reports/junit.xml` |
+| Screenshots, videos, traces of failures | `reports/test-results/` |
+| Published copy of the last run | [docs/reports/](docs/reports/) |
+
+Open a trace with `npx playwright show-trace <path to trace.zip>`. `reports/` is generated and git-ignored.
+
+## Troubleshooting
+
+- **Leftover test cases after a killed run:** stop the app, then `npm --prefix sandbox-app run reset-db`.
+- **Port 3443 busy with something else:** stop whatever uses it. If it is a sandbox app left running in the background, `npm --prefix sandbox-app run stop`.
+- **`Missing required env var ...`:** copy `.env.example` to `.env`.
+
+## Documentation (all in [docs/](docs/))
+
+| Document | Content |
+|---|---|
+| [run-guide.md](docs/run-guide.md) | Same instructions with project internals |
+| [rules.md](docs/rules.md) | Conventions every test must follow |
+| [test-plan.md](docs/test-plan.md) | Scope, assumptions, test ids, traceability |
+| [test-cases.md](docs/test-cases.md) | Detailed UI and API test cases |
+| [test-report.md](docs/test-report.md) | Latest results with evidence ([docs/reports/](docs/reports/)) |
+| [prompts.md](docs/prompts.md) | Prompt history and resulting decisions |
